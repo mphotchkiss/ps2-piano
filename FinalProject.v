@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
-// CREATED		"Fri Nov 27 18:36:29 2020"
+// CREATED		"Fri Nov 27 18:45:29 2020"
 
 module FinalProject(
 	clk_50MHz,
@@ -111,6 +111,7 @@ end
 
 
 error_check	b2v_inst9(
+	.clk_fast(clk_50MHz),
 	.clk(clk_PS2),
 	.reset_n(reset_n),
 	.error(SYNTHESIZED_WIRE_0));
