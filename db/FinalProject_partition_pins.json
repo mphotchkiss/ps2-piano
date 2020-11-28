@@ -1,0 +1,29 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "frequency",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50MHz",
+					"strict" : false
+				},
+				{
+					"name" : "reset_n",
+					"strict" : false
+				},
+				{
+					"name" : "clk_PS2",
+					"strict" : false
+				},
+				{
+					"name" : "Data",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

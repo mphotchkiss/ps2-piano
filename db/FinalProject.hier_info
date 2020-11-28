@@ -1,0 +1,233 @@
+|FinalProject
+clk_50MHz => clk_50MHz.IN4
+clk_PS2 => clk_PS2.IN2
+Data => Data.IN1
+reset_n => reset_n.IN2
+frequency <= sync:b2v_inst4.q
+
+
+|FinalProject|shiftregister:b2v_inst
+Data => stop_ALTERA_SYNTHESIZED.DATAIN
+clk => parity_ALTERA_SYNTHESIZED.CLK
+clk => dataout_ALTERA_SYNTHESIZED[7].CLK
+clk => start_ALTERA_SYNTHESIZED.CLK
+clk => dataout_ALTERA_SYNTHESIZED[0].CLK
+clk => dataout_ALTERA_SYNTHESIZED[1].CLK
+clk => dataout_ALTERA_SYNTHESIZED[2].CLK
+clk => dataout_ALTERA_SYNTHESIZED[3].CLK
+clk => dataout_ALTERA_SYNTHESIZED[4].CLK
+clk => stop_ALTERA_SYNTHESIZED.CLK
+clk => dataout_ALTERA_SYNTHESIZED[5].CLK
+clk => dataout_ALTERA_SYNTHESIZED[6].CLK
+clear_n => start_ALTERA_SYNTHESIZED.ACLR
+clear_n => stop_ALTERA_SYNTHESIZED.ACLR
+clear_n => parity_ALTERA_SYNTHESIZED.ACLR
+clear_n => dataout_ALTERA_SYNTHESIZED[7].ACLR
+clear_n => dataout_ALTERA_SYNTHESIZED[6].ACLR
+clear_n => dataout_ALTERA_SYNTHESIZED[5].ACLR
+clear_n => dataout_ALTERA_SYNTHESIZED[4].ACLR
+clear_n => dataout_ALTERA_SYNTHESIZED[3].ACLR
+clear_n => dataout_ALTERA_SYNTHESIZED[2].ACLR
+clear_n => dataout_ALTERA_SYNTHESIZED[1].ACLR
+clear_n => dataout_ALTERA_SYNTHESIZED[0].ACLR
+start <= start_ALTERA_SYNTHESIZED.DB_MAX_OUTPUT_PORT_TYPE
+stop <= stop_ALTERA_SYNTHESIZED.DB_MAX_OUTPUT_PORT_TYPE
+parity <= parity_ALTERA_SYNTHESIZED.DB_MAX_OUTPUT_PORT_TYPE
+dataout[0] <= dataout_ALTERA_SYNTHESIZED[0].DB_MAX_OUTPUT_PORT_TYPE
+dataout[1] <= dataout_ALTERA_SYNTHESIZED[1].DB_MAX_OUTPUT_PORT_TYPE
+dataout[2] <= dataout_ALTERA_SYNTHESIZED[2].DB_MAX_OUTPUT_PORT_TYPE
+dataout[3] <= dataout_ALTERA_SYNTHESIZED[3].DB_MAX_OUTPUT_PORT_TYPE
+dataout[4] <= dataout_ALTERA_SYNTHESIZED[4].DB_MAX_OUTPUT_PORT_TYPE
+dataout[5] <= dataout_ALTERA_SYNTHESIZED[5].DB_MAX_OUTPUT_PORT_TYPE
+dataout[6] <= dataout_ALTERA_SYNTHESIZED[6].DB_MAX_OUTPUT_PORT_TYPE
+dataout[7] <= dataout_ALTERA_SYNTHESIZED[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|counter:b2v_inst2
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+clk => q[4]~reg0.CLK
+clk => q[5]~reg0.CLK
+clk => q[6]~reg0.CLK
+clk => q[7]~reg0.CLK
+clk => q[8]~reg0.CLK
+clk => q[9]~reg0.CLK
+clk => q[10]~reg0.CLK
+clk => q[11]~reg0.CLK
+clk => q[12]~reg0.CLK
+clk => q[13]~reg0.CLK
+clk => q[14]~reg0.CLK
+clk => q[15]~reg0.CLK
+clk => q[16]~reg0.CLK
+clk => q[17]~reg0.CLK
+reset => q[0]~reg0.ACLR
+reset => q[1]~reg0.ACLR
+reset => q[2]~reg0.ACLR
+reset => q[3]~reg0.ACLR
+reset => q[4]~reg0.ACLR
+reset => q[5]~reg0.ACLR
+reset => q[6]~reg0.ACLR
+reset => q[7]~reg0.ACLR
+reset => q[8]~reg0.ACLR
+reset => q[9]~reg0.ACLR
+reset => q[10]~reg0.ACLR
+reset => q[11]~reg0.ACLR
+reset => q[12]~reg0.ACLR
+reset => q[13]~reg0.ACLR
+reset => q[14]~reg0.ACLR
+reset => q[15]~reg0.ACLR
+reset => q[16]~reg0.ACLR
+reset => q[17]~reg0.ACLR
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[10] <= q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[11] <= q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[12] <= q[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[13] <= q[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[14] <= q[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[15] <= q[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[16] <= q[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[17] <= q[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|sync:b2v_inst4
+clk => q~reg0.CLK
+clk => n1.CLK
+d => n1.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|datadecoder:b2v_inst6
+data[0] => Decoder0.IN7
+data[1] => Decoder0.IN6
+data[2] => Decoder0.IN5
+data[3] => Decoder0.IN4
+data[4] => Decoder0.IN3
+data[5] => Decoder0.IN2
+data[6] => Decoder0.IN1
+data[7] => Decoder0.IN0
+clk => out[0]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[3]~reg0.CLK
+clk => out[4]~reg0.CLK
+clk => out[5]~reg0.CLK
+clk => out[6]~reg0.CLK
+clk => out[7]~reg0.CLK
+clk => out[8]~reg0.CLK
+clk => out[9]~reg0.CLK
+clk => out[10]~reg0.CLK
+clk => out[11]~reg0.CLK
+clk => out[12]~reg0.CLK
+clk => out[13]~reg0.CLK
+clk => out[14]~reg0.CLK
+clk => out[15]~reg0.CLK
+clk => out[16]~reg0.CLK
+clk => out[17]~reg0.CLK
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[8] <= out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[9] <= out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[10] <= out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[11] <= out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[12] <= out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[13] <= out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[14] <= out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[15] <= out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[16] <= out[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[17] <= out[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|compL:b2v_inst7
+val[0] => LessThan0.IN18
+val[1] => LessThan0.IN17
+val[2] => LessThan0.IN16
+val[3] => LessThan0.IN15
+val[4] => LessThan0.IN14
+val[5] => LessThan0.IN13
+val[6] => LessThan0.IN12
+val[7] => LessThan0.IN11
+val[8] => LessThan0.IN10
+val[9] => LessThan0.IN9
+val[10] => LessThan0.IN8
+val[11] => LessThan0.IN7
+val[12] => LessThan0.IN6
+val[13] => LessThan0.IN5
+val[14] => LessThan0.IN4
+val[15] => LessThan0.IN3
+val[16] => LessThan0.IN2
+val[17] => LessThan0.IN1
+count[0] => LessThan0.IN36
+count[1] => LessThan0.IN35
+count[2] => LessThan0.IN34
+count[3] => LessThan0.IN33
+count[4] => LessThan0.IN32
+count[5] => LessThan0.IN31
+count[6] => LessThan0.IN30
+count[7] => LessThan0.IN29
+count[8] => LessThan0.IN28
+count[9] => LessThan0.IN27
+count[10] => LessThan0.IN26
+count[11] => LessThan0.IN25
+count[12] => LessThan0.IN24
+count[13] => LessThan0.IN23
+count[14] => LessThan0.IN22
+count[15] => LessThan0.IN21
+count[16] => LessThan0.IN20
+count[17] => LessThan0.IN19
+y <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|error_check:b2v_inst9
+clk => clk_n.IN1
+reset_n => SYNTHESIZED_WIRE_0.IN1
+clk_fast => SYNTHESIZED_WIRE_2.IN1
+error <= sync:b2v_inst3.q
+
+
+|FinalProject|error_check:b2v_inst9|counter:b2v_inst
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+reset => q[0]~reg0.ACLR
+reset => q[1]~reg0.ACLR
+reset => q[2]~reg0.ACLR
+reset => q[3]~reg0.ACLR
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|error_check:b2v_inst9|comparator:b2v_inst2
+a[0] => LessThan0.IN8
+a[1] => LessThan0.IN7
+a[2] => LessThan0.IN6
+a[3] => LessThan0.IN5
+lt <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalProject|error_check:b2v_inst9|sync:b2v_inst3
+clk => q~reg0.CLK
+clk => n1.CLK
+d => n1.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
