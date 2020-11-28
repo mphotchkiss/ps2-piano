@@ -14,12 +14,15 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
-// CREATED		"Fri Nov 27 17:37:40 2020"
+// CREATED		"Fri Nov 27 19:07:27 2020"
 
 module shiftregister(
 	Data,
 	clk,
 	clear_n,
+	start,
+	stop,
+	parity,
 	dataout
 );
 
@@ -27,26 +30,19 @@ module shiftregister(
 input wire	Data;
 input wire	clk;
 input wire	clear_n;
-output wire	[10:0] dataout;
+output wire	start;
+output wire	stop;
+output wire	parity;
+output wire	[7:0] dataout;
 
-reg	[10:0] dataout_ALTERA_SYNTHESIZED;
+reg	[7:0] dataout_ALTERA_SYNTHESIZED;
+reg	parity_ALTERA_SYNTHESIZED;
+reg	start_ALTERA_SYNTHESIZED;
+reg	stop_ALTERA_SYNTHESIZED;
 wire	SYNTHESIZED_WIRE_12;
 
 
 
-
-
-always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
-begin
-if (!clear_n)
-	begin
-	dataout_ALTERA_SYNTHESIZED[7] <= 0;
-	end
-else
-	begin
-	dataout_ALTERA_SYNTHESIZED[7] <= dataout_ALTERA_SYNTHESIZED[8];
-	end
-end
 
 
 always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
@@ -66,19 +62,6 @@ always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
 begin
 if (!clear_n)
 	begin
-	dataout_ALTERA_SYNTHESIZED[10] <= 0;
-	end
-else
-	begin
-	dataout_ALTERA_SYNTHESIZED[10] <= Data;
-	end
-end
-
-
-always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
-begin
-if (!clear_n)
-	begin
 	dataout_ALTERA_SYNTHESIZED[5] <= 0;
 	end
 else
@@ -87,8 +70,18 @@ else
 	end
 end
 
-assign	SYNTHESIZED_WIRE_12 =  ~clk;
 
+always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
+begin
+if (!clear_n)
+	begin
+	stop_ALTERA_SYNTHESIZED <= 0;
+	end
+else
+	begin
+	stop_ALTERA_SYNTHESIZED <= Data;
+	end
+end
 
 
 always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
@@ -102,6 +95,9 @@ else
 	dataout_ALTERA_SYNTHESIZED[4] <= dataout_ALTERA_SYNTHESIZED[5];
 	end
 end
+
+assign	SYNTHESIZED_WIRE_12 =  ~clk;
+
 
 
 always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
@@ -160,11 +156,11 @@ always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
 begin
 if (!clear_n)
 	begin
-	dataout_ALTERA_SYNTHESIZED[8] <= 0;
+	start_ALTERA_SYNTHESIZED <= 0;
 	end
 else
 	begin
-	dataout_ALTERA_SYNTHESIZED[8] <= dataout_ALTERA_SYNTHESIZED[9];
+	start_ALTERA_SYNTHESIZED <= dataout_ALTERA_SYNTHESIZED[0];
 	end
 end
 
@@ -173,14 +169,30 @@ always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
 begin
 if (!clear_n)
 	begin
-	dataout_ALTERA_SYNTHESIZED[9] <= 0;
+	dataout_ALTERA_SYNTHESIZED[7] <= 0;
 	end
 else
 	begin
-	dataout_ALTERA_SYNTHESIZED[9] <= dataout_ALTERA_SYNTHESIZED[10];
+	dataout_ALTERA_SYNTHESIZED[7] <= parity_ALTERA_SYNTHESIZED;
 	end
 end
 
+
+always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
+begin
+if (!clear_n)
+	begin
+	parity_ALTERA_SYNTHESIZED <= 0;
+	end
+else
+	begin
+	parity_ALTERA_SYNTHESIZED <= stop_ALTERA_SYNTHESIZED;
+	end
+end
+
+assign	start = start_ALTERA_SYNTHESIZED;
+assign	stop = stop_ALTERA_SYNTHESIZED;
+assign	parity = parity_ALTERA_SYNTHESIZED;
 assign	dataout = dataout_ALTERA_SYNTHESIZED;
 
 endmodule

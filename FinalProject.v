@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
-// CREATED		"Fri Nov 27 18:45:29 2020"
+// CREATED		"Fri Nov 27 19:08:11 2020"
 
 module FinalProject(
 	clk_50MHz,
@@ -32,35 +32,45 @@ input wire	reset_n;
 output wire	frequency;
 
 wire	[17:0] count;
-reg	data0;
-reg	data1;
-reg	data10;
-reg	data2;
-reg	data3;
-reg	data4;
-reg	data5;
-reg	data6;
-reg	data7;
-reg	data8;
-reg	data9;
-wire	[10:0] dataout;
+wire	count_less_than;
+wire	counter_reset_n;
+wire	data0;
+wire	data1;
+wire	data2;
+wire	data3;
+wire	data4;
+wire	data5;
+wire	data6;
+wire	data7;
+wire	[7:0] dataout;
 wire	[17:0] decode_data;
 wire	error;
 wire	reset_frequency;
 wire	SYNTHESIZED_WIRE_0;
-wire	SYNTHESIZED_WIRE_1;
-wire	SYNTHESIZED_WIRE_2;
 
 wire	[7:0] GDFX_TEMP_SIGNAL_0;
+reg	[7:0] GDFX_TEMP_SIGNAL_1;
 
 
-assign	GDFX_TEMP_SIGNAL_0 = {data8,data7,data6,data5,data4,data3,data2,data1};
+assign	GDFX_TEMP_SIGNAL_0 = {data7,data6,data5,data4,data3,data2,data1,data0};
+assign	data7 = GDFX_TEMP_SIGNAL_1[7];
+assign	data6 = GDFX_TEMP_SIGNAL_1[6];
+assign	data5 = GDFX_TEMP_SIGNAL_1[5];
+assign	data4 = GDFX_TEMP_SIGNAL_1[4];
+assign	data3 = GDFX_TEMP_SIGNAL_1[3];
+assign	data2 = GDFX_TEMP_SIGNAL_1[2];
+assign	data1 = GDFX_TEMP_SIGNAL_1[1];
+assign	data0 = GDFX_TEMP_SIGNAL_1[0];
+
 
 
 shiftregister	b2v_inst(
 	.Data(Data),
 	.clear_n(reset_n),
 	.clk(clk_PS2),
+	
+	
+	
 	.dataout(dataout));
 
 assign	error =  ~SYNTHESIZED_WIRE_0;
@@ -68,17 +78,17 @@ assign	error =  ~SYNTHESIZED_WIRE_0;
 
 counter	b2v_inst2(
 	.clk(clk_50MHz),
-	.reset(SYNTHESIZED_WIRE_1),
+	.reset(counter_reset_n),
 	.q(count));
 	defparam	b2v_inst2.N = 18;
 
 
 sync	b2v_inst4(
 	.clk(clk_50MHz),
-	.d(SYNTHESIZED_WIRE_2),
+	.d(count_less_than),
 	.q(reset_frequency));
 
-assign	SYNTHESIZED_WIRE_1 = reset_n & reset_frequency;
+assign	counter_reset_n = reset_n & reset_frequency;
 
 
 datadecoder	b2v_inst6(
@@ -90,7 +100,7 @@ datadecoder	b2v_inst6(
 compL	b2v_inst7(
 	.count(count),
 	.val(decode_data),
-	.y(SYNTHESIZED_WIRE_2));
+	.y(count_less_than));
 	defparam	b2v_inst7.N = 18;
 
 
@@ -98,14 +108,7 @@ always@(posedge clk_50MHz)
 begin
 if (error)
 	begin
-	data8 <= dataout[10];
-	data7 <= dataout[9];
-	data6 <= dataout[8];
-	data5 <= dataout[7];
-	data4 <= dataout[6];
-	data3 <= dataout[5];
-	data2 <= dataout[4];
-	data1 <= dataout[3];
+	GDFX_TEMP_SIGNAL_1[7:0] <= dataout[7:0];
 	end
 end
 
