@@ -14,17 +14,19 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
-// CREATED		"Fri Nov 27 18:37:39 2020"
+// CREATED		"Fri Nov 27 18:45:49 2020"
 
 module error_check(
 	clk,
 	reset_n,
+	clk_fast,
 	error
 );
 
 
 input wire	clk;
 input wire	reset_n;
+input wire	clk_fast;
 output wire	error;
 
 wire	clk_n;
@@ -32,8 +34,9 @@ wire	SYNTHESIZED_WIRE_0;
 wire	[3:0] SYNTHESIZED_WIRE_1;
 wire	SYNTHESIZED_WIRE_2;
 wire	SYNTHESIZED_WIRE_3;
+wire	SYNTHESIZED_WIRE_4;
 
-assign	error = SYNTHESIZED_WIRE_3;
+assign	error = SYNTHESIZED_WIRE_4;
 
 
 
@@ -47,19 +50,21 @@ counter	b2v_inst(
 
 comparator	b2v_inst2(
 	.a(SYNTHESIZED_WIRE_1),
-	.lt(SYNTHESIZED_WIRE_2));
+	.lt(SYNTHESIZED_WIRE_3));
 	defparam	b2v_inst2.M = 11;
 	defparam	b2v_inst2.N = 4;
 
 
 sync	b2v_inst3(
-	.clk(clk_n),
-	.d(SYNTHESIZED_WIRE_2),
-	.q(SYNTHESIZED_WIRE_3));
+	.clk(SYNTHESIZED_WIRE_2),
+	.d(SYNTHESIZED_WIRE_3),
+	.q(SYNTHESIZED_WIRE_4));
 
-assign	SYNTHESIZED_WIRE_0 = reset_n & SYNTHESIZED_WIRE_3;
+assign	SYNTHESIZED_WIRE_0 = reset_n & SYNTHESIZED_WIRE_4;
 
 assign	clk_n =  ~clk;
+
+assign	SYNTHESIZED_WIRE_2 =  ~clk_fast;
 
 
 endmodule
