@@ -14,17 +14,19 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
-// CREATED		"Fri Nov 27 17:15:31 2020"
+// CREATED		"Fri Nov 27 17:37:40 2020"
 
 module shiftregister(
 	Data,
 	clk,
+	clear_n,
 	dataout
 );
 
 
 input wire	Data;
 input wire	clk;
+input wire	clear_n;
 output wire	[10:0] dataout;
 
 reg	[10:0] dataout_ALTERA_SYNTHESIZED;
@@ -34,32 +36,52 @@ wire	SYNTHESIZED_WIRE_12;
 
 
 
-always@(posedge SYNTHESIZED_WIRE_12)
+always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
 begin
+if (!clear_n)
+	begin
+	dataout_ALTERA_SYNTHESIZED[7] <= 0;
+	end
+else
 	begin
 	dataout_ALTERA_SYNTHESIZED[7] <= dataout_ALTERA_SYNTHESIZED[8];
 	end
 end
 
 
-always@(posedge SYNTHESIZED_WIRE_12)
+always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
 begin
+if (!clear_n)
+	begin
+	dataout_ALTERA_SYNTHESIZED[6] <= 0;
+	end
+else
 	begin
 	dataout_ALTERA_SYNTHESIZED[6] <= dataout_ALTERA_SYNTHESIZED[7];
 	end
 end
 
 
-always@(posedge SYNTHESIZED_WIRE_12)
+always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
 begin
+if (!clear_n)
+	begin
+	dataout_ALTERA_SYNTHESIZED[10] <= 0;
+	end
+else
 	begin
 	dataout_ALTERA_SYNTHESIZED[10] <= Data;
 	end
 end
 
 
-always@(posedge SYNTHESIZED_WIRE_12)
+always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
 begin
+if (!clear_n)
+	begin
+	dataout_ALTERA_SYNTHESIZED[5] <= 0;
+	end
+else
 	begin
 	dataout_ALTERA_SYNTHESIZED[5] <= dataout_ALTERA_SYNTHESIZED[6];
 	end
@@ -69,56 +91,91 @@ assign	SYNTHESIZED_WIRE_12 =  ~clk;
 
 
 
-always@(posedge SYNTHESIZED_WIRE_12)
+always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
 begin
+if (!clear_n)
+	begin
+	dataout_ALTERA_SYNTHESIZED[4] <= 0;
+	end
+else
 	begin
 	dataout_ALTERA_SYNTHESIZED[4] <= dataout_ALTERA_SYNTHESIZED[5];
 	end
 end
 
 
-always@(posedge SYNTHESIZED_WIRE_12)
+always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
 begin
+if (!clear_n)
+	begin
+	dataout_ALTERA_SYNTHESIZED[3] <= 0;
+	end
+else
 	begin
 	dataout_ALTERA_SYNTHESIZED[3] <= dataout_ALTERA_SYNTHESIZED[4];
 	end
 end
 
 
-always@(posedge SYNTHESIZED_WIRE_12)
+always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
 begin
+if (!clear_n)
+	begin
+	dataout_ALTERA_SYNTHESIZED[2] <= 0;
+	end
+else
 	begin
 	dataout_ALTERA_SYNTHESIZED[2] <= dataout_ALTERA_SYNTHESIZED[3];
 	end
 end
 
 
-always@(posedge SYNTHESIZED_WIRE_12)
+always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
 begin
+if (!clear_n)
+	begin
+	dataout_ALTERA_SYNTHESIZED[1] <= 0;
+	end
+else
 	begin
 	dataout_ALTERA_SYNTHESIZED[1] <= dataout_ALTERA_SYNTHESIZED[2];
 	end
 end
 
 
-always@(posedge SYNTHESIZED_WIRE_12)
+always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
 begin
+if (!clear_n)
+	begin
+	dataout_ALTERA_SYNTHESIZED[0] <= 0;
+	end
+else
 	begin
 	dataout_ALTERA_SYNTHESIZED[0] <= dataout_ALTERA_SYNTHESIZED[1];
 	end
 end
 
 
-always@(posedge SYNTHESIZED_WIRE_12)
+always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
 begin
+if (!clear_n)
+	begin
+	dataout_ALTERA_SYNTHESIZED[8] <= 0;
+	end
+else
 	begin
 	dataout_ALTERA_SYNTHESIZED[8] <= dataout_ALTERA_SYNTHESIZED[9];
 	end
 end
 
 
-always@(posedge SYNTHESIZED_WIRE_12)
+always@(posedge SYNTHESIZED_WIRE_12 or negedge clear_n)
 begin
+if (!clear_n)
+	begin
+	dataout_ALTERA_SYNTHESIZED[9] <= 0;
+	end
+else
 	begin
 	dataout_ALTERA_SYNTHESIZED[9] <= dataout_ALTERA_SYNTHESIZED[10];
 	end

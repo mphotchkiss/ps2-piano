@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
-// CREATED		"Fri Nov 27 17:13:12 2020"
+// CREATED		"Fri Nov 27 17:39:28 2020"
 
 module FinalProject(
 	clk_50MHz,
@@ -59,6 +59,7 @@ assign	GDFX_TEMP_SIGNAL_0 = {data8,data7,data6,data5,data4,data3,data2,data1};
 
 shiftregister	b2v_inst(
 	.Data(Data),
+	.clear_n(reset_n),
 	.clk(clk_PS2),
 	.dataout(dataout));
 
