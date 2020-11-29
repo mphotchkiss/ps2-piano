@@ -34,6 +34,7 @@ refer to the applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect -672 120 -600 144))
 )
 (pin
 	(input)
@@ -52,10 +53,74 @@ refer to the applicable agreement for further details.
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
 )
 (pin
+	(input)
+	(rect -680 192 -512 208)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "clear_n" (rect 5 0 41 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
 	(output)
 	(rect 840 320 1016 336)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "dataout[10..0]" (rect 90 0 158 12)(font "Arial" ))
+	(text "dataout[7..0]" (rect 90 0 152 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 856 360 1032 376)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "start" (rect 90 0 112 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 872 408 1048 424)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "stop" (rect 90 0 110 17)(font "Intel Clear" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 880 472 1056 488)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "parity" (rect 90 0 117 17)(font "Intel Clear" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -693,14 +758,6 @@ refer to the applicable agreement for further details.
 	)
 )
 (connector
-	(pt 472 112)
-	(pt 472 104)
-)
-(connector
-	(pt 472 104)
-	(pt 512 104)
-)
-(connector
 	(pt 808 104)
 	(pt 808 112)
 )
@@ -739,14 +796,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 616 104)
 	(pt 664 104)
-)
-(connector
-	(pt 416 112)
-	(pt 456 112)
-)
-(connector
-	(pt 456 112)
-	(pt 472 112)
 )
 (connector
 	(pt 280 112)
@@ -937,61 +986,6 @@ refer to the applicable agreement for further details.
 	(pt 1512 112)
 )
 (connector
-	(text "dataout[0]" (rect 1456 60 1473 109)(font "Intel Clear" )(vertical))
-	(pt 1472 112)
-	(pt 1472 56)
-)
-(connector
-	(text "dataout[10]" (rect -240 60 -223 115)(font "Intel Clear" )(vertical))
-	(pt -224 112)
-	(pt -224 56)
-)
-(connector
-	(text "dataout[9]" (rect -40 60 -23 109)(font "Intel Clear" )(vertical))
-	(pt -24 112)
-	(pt -24 56)
-)
-(connector
-	(text "dataout[8]" (rect 152 60 169 109)(font "Intel Clear" )(vertical))
-	(pt 168 112)
-	(pt 168 48)
-)
-(connector
-	(text "dataout[7]" (rect 304 60 321 109)(font "Intel Clear" )(vertical))
-	(pt 320 112)
-	(pt 320 56)
-)
-(connector
-	(text "dataout[6]" (rect 440 60 457 109)(font "Intel Clear" )(vertical))
-	(pt 456 112)
-	(pt 456 56)
-)
-(connector
-	(text "dataout[5]" (rect 600 52 617 101)(font "Intel Clear" )(vertical))
-	(pt 616 104)
-	(pt 616 56)
-)
-(connector
-	(text "dataout[4]" (rect 752 52 769 101)(font "Intel Clear" )(vertical))
-	(pt 768 104)
-	(pt 768 56)
-)
-(connector
-	(text "dataout[3]" (rect 928 60 945 109)(font "Intel Clear" )(vertical))
-	(pt 944 112)
-	(pt 944 64)
-)
-(connector
-	(text "dataout[2]" (rect 1112 60 1129 109)(font "Intel Clear" )(vertical))
-	(pt 1128 112)
-	(pt 1128 64)
-)
-(connector
-	(text "dataout[1]" (rect 1288 60 1305 109)(font "Intel Clear" )(vertical))
-	(pt 1304 112)
-	(pt 1304 56)
-)
-(connector
 	(pt -480 248)
 	(pt -464 248)
 )
@@ -1002,6 +996,173 @@ refer to the applicable agreement for further details.
 (connector
 	(pt -416 248)
 	(pt -392 248)
+)
+(connector
+	(pt -320 200)
+	(pt -320 168)
+)
+(connector
+	(pt -120 200)
+	(pt -120 168)
+)
+(connector
+	(pt -512 200)
+	(pt -320 200)
+)
+(connector
+	(pt 80 200)
+	(pt 80 168)
+)
+(connector
+	(pt -320 200)
+	(pt -120 200)
+)
+(connector
+	(pt 248 200)
+	(pt 248 168)
+)
+(connector
+	(pt -120 200)
+	(pt 80 200)
+)
+(connector
+	(pt 384 200)
+	(pt 384 168)
+)
+(connector
+	(pt 80 200)
+	(pt 248 200)
+)
+(connector
+	(pt 544 200)
+	(pt 544 160)
+)
+(connector
+	(pt 248 200)
+	(pt 384 200)
+)
+(connector
+	(pt 696 200)
+	(pt 696 160)
+)
+(connector
+	(pt 384 200)
+	(pt 544 200)
+)
+(connector
+	(pt 864 200)
+	(pt 864 168)
+)
+(connector
+	(pt 544 200)
+	(pt 696 200)
+)
+(connector
+	(pt 1032 200)
+	(pt 1032 168)
+)
+(connector
+	(pt 696 200)
+	(pt 864 200)
+)
+(connector
+	(pt 1224 200)
+	(pt 1224 168)
+)
+(connector
+	(pt 864 200)
+	(pt 1032 200)
+)
+(connector
+	(pt 1392 200)
+	(pt 1392 168)
+)
+(connector
+	(pt 1032 200)
+	(pt 1224 200)
+)
+(connector
+	(pt 1544 200)
+	(pt 1544 168)
+)
+(connector
+	(pt 1224 200)
+	(pt 1392 200)
+)
+(connector
+	(pt 1392 200)
+	(pt 1544 200)
+)
+(connector
+	(text "stop" (rect -240 60 -223 80)(font "Intel Clear" )(vertical))
+	(pt -224 112)
+	(pt -224 56)
+)
+(connector
+	(text "parity" (rect -40 60 -23 87)(font "Intel Clear" )(vertical))
+	(pt -24 112)
+	(pt -24 56)
+)
+(connector
+	(text "start" (rect 1456 60 1473 81)(font "Intel Clear" )(vertical))
+	(pt 1472 112)
+	(pt 1472 56)
+)
+(connector
+	(text "dataout[7]" (rect 152 60 169 109)(font "Intel Clear" )(vertical))
+	(pt 168 112)
+	(pt 168 48)
+)
+(connector
+	(text "dataout[6]" (rect 304 60 321 109)(font "Intel Clear" )(vertical))
+	(pt 320 112)
+	(pt 320 56)
+)
+(connector
+	(pt 472 112)
+	(pt 472 104)
+)
+(connector
+	(pt 472 104)
+	(pt 512 104)
+)
+(connector
+	(pt 416 112)
+	(pt 456 112)
+)
+(connector
+	(pt 456 112)
+	(pt 472 112)
+)
+(connector
+	(text "dataout[5]" (rect 440 60 457 109)(font "Intel Clear" )(vertical))
+	(pt 456 112)
+	(pt 456 56)
+)
+(connector
+	(text "dataout[4]" (rect 600 52 617 101)(font "Intel Clear" )(vertical))
+	(pt 616 104)
+	(pt 616 56)
+)
+(connector
+	(text "dataout[3]" (rect 752 52 769 101)(font "Intel Clear" )(vertical))
+	(pt 768 104)
+	(pt 768 56)
+)
+(connector
+	(text "dataout[2]" (rect 928 60 945 109)(font "Intel Clear" )(vertical))
+	(pt 944 112)
+	(pt 944 64)
+)
+(connector
+	(text "dataout[1]" (rect 1112 60 1129 109)(font "Intel Clear" )(vertical))
+	(pt 1128 112)
+	(pt 1128 64)
+)
+(connector
+	(text "dataout[0]" (rect 1288 60 1305 109)(font "Intel Clear" )(vertical))
+	(pt 1304 112)
+	(pt 1304 56)
 )
 (junction (pt 1128 112))
 (junction (pt 944 112))
@@ -1025,3 +1186,14 @@ refer to the applicable agreement for further details.
 (junction (pt -224 112))
 (junction (pt 1328 248))
 (junction (pt 1472 112))
+(junction (pt -320 200))
+(junction (pt -120 200))
+(junction (pt 80 200))
+(junction (pt 248 200))
+(junction (pt 384 200))
+(junction (pt 544 200))
+(junction (pt 696 200))
+(junction (pt 864 200))
+(junction (pt 1032 200))
+(junction (pt 1224 200))
+(junction (pt 1392 200))

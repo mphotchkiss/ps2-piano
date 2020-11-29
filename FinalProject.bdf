@@ -169,7 +169,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 216 616 264 680)
+	(rect 216 656 264 720)
 	(text "AND2" (rect 0 39 10 63)(font "Arial" (font_size 6))(vertical))
 	(text "inst5" (rect 37 39 54 61)(font "Intel Clear" )(vertical))
 	(port
@@ -590,15 +590,6 @@ refer to the applicable agreement for further details.
 	(pt 864 176)
 )
 (connector
-	(text "reset_n" (rect 216 680 233 715)(font "Intel Clear" )(vertical))
-	(pt 232 680)
-	(pt 232 720)
-)
-(connector
-	(pt 272 576)
-	(pt 240 576)
-)
-(connector
 	(text "clk_50MHz" (rect 856 512 909 529)(font "Intel Clear" ))
 	(pt 888 528)
 	(pt 856 528)
@@ -628,11 +619,6 @@ refer to the applicable agreement for further details.
 	(text "count_less_than" (rect 810 528 887 545)(font "Intel Clear" ))
 	(pt 800 544)
 	(pt 888 544)
-)
-(connector
-	(text "counter_reset_n" (rect 224 541 241 617)(font "Intel Clear" )(vertical))
-	(pt 240 576)
-	(pt 240 616)
 )
 (connector
 	(text "clk_50MHz" (rect 226 456 279 473)(font "Intel Clear" ))
@@ -667,21 +653,8 @@ refer to the applicable agreement for further details.
 	(pt 504 296)
 )
 (connector
-	(pt 248 680)
-	(pt 248 688)
-)
-(connector
 	(pt 1008 528)
 	(pt 1056 528)
-)
-(connector
-	(pt 1056 688)
-	(pt 1056 528)
-)
-(connector
-	(text "reset_frequency" (rect 338 672 414 689)(font "Intel Clear" ))
-	(pt 248 688)
-	(pt 1056 688)
 )
 (connector
 	(pt 1056 688)
@@ -703,5 +676,36 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 1208 696)
 	(pt 1232 696)
+)
+(connector
+	(pt 1056 528)
+	(pt 1056 688)
+)
+(connector
+	(pt 1056 688)
+	(pt 1056 752)
+)
+(connector
+	(text "reset_n" (rect 216 720 233 755)(font "Intel Clear" )(vertical))
+	(pt 232 720)
+	(pt 232 760)
+)
+(connector
+	(pt 272 576)
+	(pt 240 576)
+)
+(connector
+	(pt 248 752)
+	(pt 248 720)
+)
+(connector
+	(text "reset_frequency" (rect 354 736 430 753)(font "Intel Clear" ))
+	(pt 1056 752)
+	(pt 248 752)
+)
+(connector
+	(text "counter_reset_n" (rect 224 581 241 657)(font "Intel Clear" )(vertical))
+	(pt 240 576)
+	(pt 240 656)
 )
 (junction (pt 1056 688))
