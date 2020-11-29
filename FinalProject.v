@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
-// CREATED		"Fri Nov 27 19:08:11 2020"
+// CREATED		"Sun Nov 29 14:12:54 2020"
 
 module FinalProject(
 	clk_50MHz,
@@ -42,11 +42,13 @@ wire	data4;
 wire	data5;
 wire	data6;
 wire	data7;
+wire	data_exists;
 wire	[7:0] dataout;
 wire	[17:0] decode_data;
 wire	error;
 wire	reset_frequency;
 wire	SYNTHESIZED_WIRE_0;
+wire	SYNTHESIZED_WIRE_1;
 
 wire	[7:0] GDFX_TEMP_SIGNAL_0;
 reg	[7:0] GDFX_TEMP_SIGNAL_1;
@@ -73,7 +75,15 @@ shiftregister	b2v_inst(
 	
 	.dataout(dataout));
 
-assign	error =  ~SYNTHESIZED_WIRE_0;
+
+turn_off	b2v_inst1(
+	.clock_50MHz(clk_50MHz),
+	.reset_n(clk_PS2),
+	.less_than(data_exists));
+
+assign	frequency = SYNTHESIZED_WIRE_0 & data_exists;
+
+assign	error =  ~SYNTHESIZED_WIRE_1;
 
 
 counter	b2v_inst2(
@@ -81,6 +91,8 @@ counter	b2v_inst2(
 	.reset(counter_reset_n),
 	.q(count));
 	defparam	b2v_inst2.N = 18;
+
+assign	SYNTHESIZED_WIRE_0 =  ~reset_frequency;
 
 
 sync	b2v_inst4(
@@ -117,8 +129,7 @@ error_check	b2v_inst9(
 	.clk_fast(clk_50MHz),
 	.clk(clk_PS2),
 	.reset_n(reset_n),
-	.error(SYNTHESIZED_WIRE_0));
+	.error(SYNTHESIZED_WIRE_1));
 
-assign	frequency = reset_frequency;
 
 endmodule
