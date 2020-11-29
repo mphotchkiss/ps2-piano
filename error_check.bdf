@@ -52,6 +52,22 @@ refer to the applicable agreement for further details.
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
 )
 (pin
+	(input)
+	(rect 496 56 664 72)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "clk_fast" (rect 5 0 46 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
 	(output)
 	(rect 872 176 1048 192)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
@@ -130,39 +146,6 @@ refer to the applicable agreement for further details.
 	(rotate90)
 )
 (symbol
-	(rect 496 168 632 248)
-	(text "comparator" (rect 5 0 60 12)(font "Arial" ))
-	(text "inst2" (rect 8 64 30 81)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "a[N-1..0]" (rect 0 0 43 12)(font "Arial" ))
-		(text "a[N-1..0]" (rect 21 27 64 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 136 32)
-		(output)
-		(text "lt" (rect 0 0 5 12)(font "Arial" ))
-		(text "lt" (rect 111 27 116 39)(font "Arial" ))
-		(line (pt 136 32)(pt 120 32))
-	)
-	(parameter
-		"N"
-		"4"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"M"
-		"11"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 120 64))
-	)
-	(annotation_block (parameter)(rect 440 72 609 129))
-)
-(symbol
 	(rect 280 168 432 248)
 	(text "counter" (rect 5 0 41 12)(font "Arial" ))
 	(text "inst" (rect 8 64 25 76)(font "Arial" ))
@@ -222,6 +205,65 @@ refer to the applicable agreement for further details.
 		(circle (rect 31 12 39 20))
 	)
 )
+(symbol
+	(rect 496 168 632 248)
+	(text "comparator" (rect 5 0 60 12)(font "Arial" ))
+	(text "inst2" (rect 8 64 31 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "a[N-1..0]" (rect 0 0 43 12)(font "Arial" ))
+		(text "a[N-1..0]" (rect 21 27 64 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 136 32)
+		(output)
+		(text "lt" (rect 0 0 5 12)(font "Arial" ))
+		(text "lt" (rect 111 27 115 39)(font "Arial" ))
+		(line (pt 136 32)(pt 120 32))
+	)
+	(parameter
+		"N"
+		"4"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"M"
+		"11"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 120 64))
+	)
+	(annotation_block (parameter)(rect 440 72 609 129))
+)
+(symbol
+	(rect 648 104 680 152)
+	(text "NOT" (rect 22 1 32 21)(font "Arial" (font_size 6))(vertical))
+	(text "inst6" (rect -6 3 11 25)(font "Intel Clear" )(vertical))
+	(port
+		(pt 16 0)
+		(input)
+		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
+		(text "IN" (rect 13 2 25 13)(font "Courier New" (bold))(vertical)(invisible))
+		(line (pt 16 0)(pt 16 13))
+	)
+	(port
+		(pt 16 48)
+		(output)
+		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 13 32 25 49)(font "Courier New" (bold))(vertical)(invisible))
+		(line (pt 16 39)(pt 16 48))
+	)
+	(drawing
+		(line (pt 7 13)(pt 25 13))
+		(line (pt 25 13)(pt 16 31))
+		(line (pt 7 13)(pt 16 31))
+		(circle (rect 12 31 20 39))
+	)
+	(rotate270)
+)
 (connector
 	(pt 432 200)
 	(pt 496 200)
@@ -248,21 +290,20 @@ refer to the applicable agreement for further details.
 	(pt 240 232)
 )
 (connector
-	(pt 688 184)
-	(pt 656 184)
-)
-(connector
-	(text "clk" (rect 640 162 657 176)(font "Intel Clear" )(vertical))
-	(pt 656 184)
-	(pt 656 144)
+	(pt 192 200)
+	(pt 176 200)
 )
 (connector
 	(pt 848 184)
-	(pt 848 296)
+	(pt 848 312)
 )
 (connector
 	(pt 248 296)
-	(pt 848 296)
+	(pt 248 312)
+)
+(connector
+	(pt 248 312)
+	(pt 848 312)
 )
 (connector
 	(pt 808 184)
@@ -273,11 +314,20 @@ refer to the applicable agreement for further details.
 	(pt 872 184)
 )
 (connector
-	(pt 192 200)
-	(pt 176 200)
-)
-(connector
+	(text "clk_n" (rect 250 184 275 201)(font "Intel Clear" ))
 	(pt 280 200)
 	(pt 240 200)
+)
+(connector
+	(pt 688 184)
+	(pt 664 184)
+)
+(connector
+	(pt 664 104)
+	(pt 664 64)
+)
+(connector
+	(pt 664 184)
+	(pt 664 152)
 )
 (junction (pt 848 184))

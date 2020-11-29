@@ -26,16 +26,23 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 32)
 		(input)
-		(text "clk" (rect 0 0 16 19)(font "Intel Clear" (font_size 8)))
-		(text "clk" (rect 21 27 37 46)(font "Intel Clear" (font_size 8)))
+		(text "clk_fast" (rect 0 0 46 19)(font "Intel Clear" (font_size 8)))
+		(text "clk_fast" (rect 21 27 67 46)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 32)(pt 16 32))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "reset_n" (rect 0 0 43 19)(font "Intel Clear" (font_size 8)))
-		(text "reset_n" (rect 21 43 64 62)(font "Intel Clear" (font_size 8)))
+		(text "clk" (rect 0 0 16 19)(font "Intel Clear" (font_size 8)))
+		(text "clk" (rect 21 43 37 62)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "reset_n" (rect 0 0 43 19)(font "Intel Clear" (font_size 8)))
+		(text "reset_n" (rect 21 59 64 78)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
 	)
 	(port
 		(pt 128 32)
