@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
-// CREATED		"Sun Nov 29 16:28:42 2020"
+// CREATED		"Sun Nov 29 17:49:02 2020"
 
 module turn_off(
 	clock_50MHz,
@@ -43,7 +43,7 @@ counter	b2v_inst(
 comparator	b2v_inst2(
 	.a(SYNTHESIZED_WIRE_0),
 	.lt(less_than));
-	defparam	b2v_inst2.M = 10000;
+	defparam	b2v_inst2.M = 1000000;
 	defparam	b2v_inst2.N = 32;
 
 

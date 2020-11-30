@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
-// CREATED		"Sun Nov 29 16:28:23 2020"
+// CREATED		"Sun Nov 29 17:49:49 2020"
 
 module FinalProject(
 	clk_50MHz,
@@ -50,7 +50,6 @@ wire	error;
 wire	frequency_high;
 wire	reset_count;
 wire	SYNTHESIZED_WIRE_0;
-wire	SYNTHESIZED_WIRE_1;
 
 wire	[7:0] GDFX_TEMP_SIGNAL_0;
 reg	[7:0] GDFX_TEMP_SIGNAL_1;
@@ -98,7 +97,7 @@ compL2	b2v_inst12(
 sync	b2v_inst13(
 	.clk(clk_50MHz),
 	.d(count_less_than_half),
-	.q(SYNTHESIZED_WIRE_1));
+	.q(frequency_high));
 
 
 counter	b2v_inst2(
@@ -106,8 +105,6 @@ counter	b2v_inst2(
 	.reset(counter_reset_n),
 	.q(count));
 	defparam	b2v_inst2.N = 18;
-
-assign	frequency_high =  ~SYNTHESIZED_WIRE_1;
 
 
 sync	b2v_inst4(

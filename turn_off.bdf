@@ -50,6 +50,7 @@ refer to the applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 96 240 160 264))
 )
 (pin
 	(output)
@@ -127,13 +128,13 @@ refer to the applicable agreement for further details.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"M"
-		"10000"
+		"1000000"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 120 64))
 	)
-	(annotation_block (parameter)(rect 816 120 991 177))
+	(annotation_block (parameter)(rect 816 120 1005 177))
 )
 (connector
 	(pt 480 216)
