@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
-// CREATED		"Sun Nov 29 15:37:53 2020"
+// CREATED		"Sun Nov 29 16:28:23 2020"
 
 module FinalProject(
 	clk_50MHz,
