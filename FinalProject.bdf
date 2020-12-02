@@ -416,35 +416,6 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 888 360 1080 456)
-	(text "turn_off" (rect 5 0 52 19)(font "Intel Clear" (font_size 8)))
-	(text "inst1" (rect 8 75 30 92)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clock_50MHz" (rect 0 0 79 19)(font "Intel Clear" (font_size 8)))
-		(text "clock_50MHz" (rect 21 27 100 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "reset_n" (rect 0 0 43 19)(font "Intel Clear" (font_size 8)))
-		(text "reset_n" (rect 21 43 64 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 192 32)
-		(output)
-		(text "less_than" (rect 0 0 55 19)(font "Intel Clear" (font_size 8)))
-		(text "less_than" (rect 116 27 171 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 192 32)(pt 176 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 176 80))
-	)
-)
-(symbol
 	(rect 880 240 1104 336)
 	(text "oscillator" (rect 5 0 58 19)(font "Intel Clear" (font_size 8)))
 	(text "inst25" (rect 8 75 36 92)(font "Intel Clear" ))
@@ -478,6 +449,35 @@ refer to the applicable agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 208 80))
+	)
+)
+(symbol
+	(rect 888 360 1080 456)
+	(text "turn_off" (rect 5 0 52 19)(font "Intel Clear" (font_size 8)))
+	(text "inst1" (rect 8 75 30 92)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock_50MHz" (rect 0 0 79 19)(font "Intel Clear" (font_size 8)))
+		(text "clock_50MHz" (rect 21 27 100 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset_n" (rect 0 0 43 19)(font "Intel Clear" (font_size 8)))
+		(text "reset_n" (rect 21 43 64 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 192 32)
+		(output)
+		(text "less_than" (rect 0 0 55 19)(font "Intel Clear" (font_size 8)))
+		(text "less_than" (rect 116 27 171 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 192 32)(pt 176 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 176 80))
 	)
 )
 (connector
