@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
-// CREATED		"Fri Nov 27 19:07:27 2020"
+// CREATED		"Wed Dec 02 12:13:01 2020"
 
 module shiftregister(
 	Data,

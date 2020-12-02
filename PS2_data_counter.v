@@ -14,40 +14,54 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
-// CREATED		"Wed Dec 02 12:11:43 2020"
+// CREATED		"Wed Dec 02 12:12:22 2020"
 
-module turn_off(
-	clock_50MHz,
+module PS2_data_counter(
+	clk_50MHz,
 	reset_n,
-	less_than
+	decode_data,
+	reset_count,
+	count
 );
 
 
-input wire	clock_50MHz;
+input wire	clk_50MHz;
 input wire	reset_n;
-output wire	less_than;
+input wire	[17:0] decode_data;
+output wire	reset_count;
+output wire	[17:0] count;
 
-wire	SYNTHESIZED_WIRE_0;
-wire	[31:0] SYNTHESIZED_WIRE_1;
-
-assign	less_than = SYNTHESIZED_WIRE_0;
-
-
-
-
-enabled_counter	b2v_inst(
-	.clk(clock_50MHz),
-	.en(SYNTHESIZED_WIRE_0),
-	.reset_n(reset_n),
-	.count(SYNTHESIZED_WIRE_1));
-	defparam	b2v_inst.N = 32;
+wire	[17:0] count_ALTERA_SYNTHESIZED;
+wire	count_less_than;
+wire	counter_reset_n;
+wire	reset_count_ALTERA_SYNTHESIZED;
 
 
-comparator	b2v_inst3(
-	.a(SYNTHESIZED_WIRE_1),
-	.lt(SYNTHESIZED_WIRE_0));
-	defparam	b2v_inst3.M = 10000000;
-	defparam	b2v_inst3.N = 32;
 
+
+
+counter	b2v_inst2(
+	.clk(clk_50MHz),
+	.reset(counter_reset_n),
+	.q(count_ALTERA_SYNTHESIZED));
+	defparam	b2v_inst2.N = 18;
+
+
+sync	b2v_inst4(
+	.clk(clk_50MHz),
+	.d(count_less_than),
+	.q(reset_count_ALTERA_SYNTHESIZED));
+
+assign	counter_reset_n = reset_n & reset_count_ALTERA_SYNTHESIZED;
+
+
+compL	b2v_inst7(
+	.count(count_ALTERA_SYNTHESIZED),
+	.val(decode_data),
+	.y(count_less_than));
+	defparam	b2v_inst7.N = 18;
+
+assign	reset_count = reset_count_ALTERA_SYNTHESIZED;
+assign	count = count_ALTERA_SYNTHESIZED;
 
 endmodule

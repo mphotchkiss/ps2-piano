@@ -1,9 +1,5 @@
 module datadecoder(input logic [7:0] data, input logic clk, output logic [17:0] out);
 
-/*	logic [7:0] y;
-	always_comb
-		y = data[8:1];
-*/
 	always_ff @(posedge clk)
 		case(data)
 			8'b00011100: out <= 227273; //'a' key A note

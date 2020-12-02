@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
-// CREATED		"Fri Nov 27 18:45:49 2020"
+// CREATED		"Wed Dec 02 12:12:12 2020"
 
 module error_check(
 	clk,
