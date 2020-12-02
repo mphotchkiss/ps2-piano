@@ -1,6 +1,5 @@
 import bpy
 import os
-import math
 
 #---------------------------------------------------------------------
 # This function takes a list of floats from an oscilloscope 
@@ -19,10 +18,10 @@ def gen_force(list, name, vl, vh):
     for curr in list:
         if curr - prev >= vh - vl:   # Changes to LOW signal
             force = force + "1 @ " + "{0}".format(i) + "ps, "
-            prev = curr
+            prev = vh
         elif curr - prev <= vl - vh: # Changes to HIGH signal
             force = force + "0 @ " + "{0}".format(i) + "ps, "
-            prev = curr
+            prev = vl
         i = i + 1
     force = force[:-2] # Remove last ', ' using slicing
     return force
@@ -50,7 +49,7 @@ def csv_to_do(name):
     # Parse each line in CSV and store floats in proper lists
     for line in Lines[14:-1]: # Ignore first 14 and last 1 lines
         l = line.strip().split(',')
-        t = float(l[0].split("e")[0]) * pow(10, float(l[0].split("e")[1]))
+        t = float(l[0].split("e")[0]) * (10 ** float(l[0].split("e")[1]))
         time.append(t)
         ch1.append(float(l[1]))
         ch2.append(float(l[2]))
