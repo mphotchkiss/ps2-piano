@@ -1,4 +1,0 @@
-add wave *
-force reset_n 0 @ 0, 1 @ 1
-force clock_50MHz 0 @ 0, 1 @ 1 -r 2
-run 3000000

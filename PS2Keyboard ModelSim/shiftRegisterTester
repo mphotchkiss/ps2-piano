@@ -1,5 +1,0 @@
-add wave *
-force clk 0 @ 0, 1 @ 1 -r 2
-force clear_n 0 @ 0, 1 @ 2, 0 @ 50, 1 @ 52
-force Data 1 @ 0, 0 @ 50
-run 100
