@@ -1,0 +1,8 @@
+add wave *
+force reset_n 0 @ 0, 1 @ 400
+force clk_50MHz 1 @ 0, 0 @ 1 -r 2
+
+force clk_PS2 1 @ 0ps, 0 @ 3075ps, 1 @ 3282ps, 0 @ 3491ps, 1 @ 3698ps, 0 @ 3910ps, 1 @ 4117ps, 0 @ 4328ps, 1 @ 4535ps, 0 @ 4747ps, 1 @ 4953ps, 0 @ 5165ps, 1 @ 5372ps, 0 @ 5584ps, 1 @ 5790ps, 0 @ 6002ps, 1 @ 6209ps, 0 @ 6421ps, 1 @ 6627ps, 0 @ 6924ps, 1 @ 7043ps, 0 @ 7255ps, 1 @ 7462ps
+force Data 1 @ 0ps, 0 @ 2977ps, 1 @ 3396ps, 0 @ 3814ps, 1 @ 4233ps, 0 @ 5069ps, 1 @ 5488ps, 0 @ 5906ps, 1 @ 6741ps
+
+run 5000000
