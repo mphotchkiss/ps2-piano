@@ -1,4 +1,4 @@
-module datadecoder(input logic [7:0] data, input logic clk, output logic [17:0] out);
+module datadecoder(input logic [7:0] data, input logic clk, output logic [17:0] out); //accept 8 bits of make code data
 
 	always_ff @(posedge clk)
 		case(data)
@@ -10,6 +10,6 @@ module datadecoder(input logic [7:0] data, input logic clk, output logic [17:0] 
 			8'b00101011: out <= 170068; //'f' key D note
 			8'b00101101: out <= 160722; //'r' key E sharp note
 			8'b00101100: out <= 151515; //'t' key E note
-			default: out <= 0;
+			default: out <= 0; //non-identified key was pressed, thus the ratio is 0
 		endcase
 endmodule
