@@ -1,3 +1,11 @@
+//////////////////////////////////////////////////////////////////////////////
+// Company: 		Oregon State University
+// Engineer Group:	Group 7
+//
+// Create Date: 	20 November 2020
+// Design Name:		PS/2 Keyboard Piano
+// Description:		Return frequency ratio of specified key
+//////////////////////////////////////////////////////////////////////////////
 module datadecoder(input logic [7:0] data, input logic clk, output logic [17:0] out); //accept 8 bits of make code data
 
 	always_ff @(posedge clk)

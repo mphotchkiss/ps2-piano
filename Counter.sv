@@ -1,3 +1,11 @@
+//////////////////////////////////////////////////////////////////////////////
+// Company: 		Oregon State University
+// Engineer Group:	Group 7
+//
+// Create Date: 	20 November 2020
+// Design Name:		PS/2 Keyboard Piano
+// Description:		Counts the number of clock cycles until being reset
+//////////////////////////////////////////////////////////////////////////////
 module counter #(parameter N = 8) //parameter N specifies the output bits
 				(input logic clk, input logic reset, output logic [(N-1):0] q);
 
